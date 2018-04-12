@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/menu.home" />
+        <item
+            android:id="@+id/nav_arrivals"
+            android:title="@string/menu.arrivals" />
+        <item
+            android:id="@+id/nav_departures"
+            android:title="@string/menu.departures" />
+    </group>
+
+    <item
+        android:title="@string/menu.other">
+
+        <menu>
+
+            <item
+                android:id="@+id/nav_profile"
+                android:title="@string/menu.profile"
+                />
+            <item
+                android:id="@+id/nav_settings"
+                android:title="@string/menu.settings"
+                />
+        </menu>
+    </item>
+
+</menu>
