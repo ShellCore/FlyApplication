@@ -9,7 +9,7 @@
     <string name="menu.other">Other</string>
 
     <string name="home.title">@string/home</string>
-    <string name="hello.message">Hello from Home</string>
+    <string name="home.message">Hello from Home</string>
     <string name="arrivals.title">@string/arrivals</string>
     <string name="arrivals.message">Hello from Arrivals</string>
     <string name="departure.title">@string/departure</string>
@@ -24,6 +24,5 @@
 
     <string name="open_drawer">Navigation drawer is open</string>
     <string name="close_drawer">Navigation drawer is close</string>
-
 
 </resources>
