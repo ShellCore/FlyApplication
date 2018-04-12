@@ -1,7 +1,7 @@
 package com.example.mylibrary
 
 import android.support.v7.app.AppCompatActivity
-import android.widget.Toolbar
+import android.support.v7.widget.Toolbar
 
 open class ToolbarActivity : AppCompatActivity(), CustomToolbar {
 
@@ -10,11 +10,11 @@ open class ToolbarActivity : AppCompatActivity(), CustomToolbar {
     override fun loadToolbar(toolbar: Toolbar?) {
         _toolbar = toolbar
         _toolbar?.let {
-            setActionBar(_toolbar)
+            setSupportActionBar(_toolbar)
         }
     }
 
     override fun enableHomeDisplay(value: Boolean) {
-        actionBar.setDisplayHomeAsUpEnabled(value)
+        supportActionBar?.setDisplayHomeAsUpEnabled(value)
     }
 }
