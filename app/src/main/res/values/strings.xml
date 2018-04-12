@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Fly Application</string>
+    <string name="app_name">Vuelingo</string>
+
+    <string name="user_name">Pedro Perez</string>
+    <string name="user_email">pperez@mail.com</string>
+
+    <string name="open_drawer">Navigation drawer is open</string>
+    <string name="close_drawer">Navigation drawer is close</string>
+
+    <string name="home.title">Home</string>
+    <string name="hello.message">Hello from Home</string>
+    <string name="arrivals.title">Arrivals</string>
+    <string name="arrivals.message">Hello from Arrivals</string>
+    <string name="departure.title">Departure</string>
+    <string name="departure.message">Hello from Departure</string>
 </resources>
