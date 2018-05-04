@@ -2,15 +2,19 @@ package com.example.shell.flyapplication.ui
 
 import android.os.Bundle
 import android.support.design.widget.NavigationView
+import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
+import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.widget.Toolbar
 import android.view.MenuItem
+import android.widget.TextView
 import com.example.mylibrary.ToolbarActivity
 import com.example.shell.flyapplication.R
 import com.example.shell.flyapplication.ui.fragments.ArrivalsFragment
 import com.example.shell.flyapplication.ui.fragments.DeparturesFragment
 import com.example.shell.flyapplication.ui.fragments.HomeFragment
+import com.example.shell.flyapplication.ui.utils.showMessage
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : ToolbarActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -22,16 +26,22 @@ class MainActivity : ToolbarActivity(), NavigationView.OnNavigationItemSelectedL
         setNavDrawer()
         fragmentTransaction(HomeFragment())
         navView.menu.getItem(0).isChecked = true
+        setUserHeaderInformation()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
-            R.id.nav_home -> fragmentTransaction(HomeFragment())
-            R.id.nav_arrivals -> fragmentTransaction(ArrivalsFragment())
-            R.id.nav_departures -> fragmentTransaction(DeparturesFragment())
-        }
-
+        loadFragmentById(item.itemId)
+        showMessageNavItemSelectedById(item.itemId)
+        drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    override fun onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
     }
 
     private fun setNavDrawer() {
@@ -47,4 +57,36 @@ class MainActivity : ToolbarActivity(), NavigationView.OnNavigationItemSelectedL
                 .replace(R.id.container, fragment)
                 .commit()
     }
+
+    private fun loadFragmentById(id: Int) {
+        when(id) {
+            R.id.nav_home -> fragmentTransaction(HomeFragment())
+            R.id.nav_arrivals -> fragmentTransaction(ArrivalsFragment())
+            R.id.nav_departures -> fragmentTransaction(DeparturesFragment())
+        }
+    }
+
+    private fun showMessageNavItemSelectedById(id: Int) {
+        when(id) {
+            R.id.nav_profile -> showMessage("Profile")
+            R.id.nav_settings -> showMessage("Settings")
+        }
+    }
+
+    private fun setUserHeaderInformation() {
+        val name = navView.getHeaderView(0)
+                .findViewById<TextView>(R.id.txtTitleName)
+        val email = navView.getHeaderView(0)
+                .findViewById<TextView>(R.id.txtTitleEmail)
+
+        name?.let {
+            name.text = getString(R.string.user_name)
+        }
+        email?.let {
+            email.text = getString(R.string.user_email)
+        }
+
+    }
+
+    private fun showMessage(message: String) = container.showMessage(message)
 }
