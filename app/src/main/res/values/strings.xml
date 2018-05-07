@@ -1,3 +1,28 @@
 <resources>
-    <string name="app_name">Fly Application</string>
+    <string name="app_name">Vuelingo</string>
+
+    <string name="menu.home">@string/home</string>
+    <string name="menu.departures">@string/departure</string>
+    <string name="menu.arrivals">@string/arrivals</string>
+    <string name="menu.profile">Profile</string>
+    <string name="menu.settings">Settings</string>
+    <string name="menu.other">Other</string>
+
+    <string name="home.title">@string/home</string>
+    <string name="home.message">Hello from Home</string>
+    <string name="arrivals.title">@string/arrivals</string>
+    <string name="arrivals.message">Hello from Arrivals</string>
+    <string name="departure.title">@string/departure</string>
+    <string name="departure.message">Hello from Departure</string>
+
+    <string name="home">Home</string>
+    <string name="departure">Departures</string>
+    <string name="arrivals">Arrivals</string>
+
+    <string name="user_name">Pedro Perez</string>
+    <string name="user_email">pperez@mail.com</string>
+
+    <string name="open_drawer">Navigation drawer is open</string>
+    <string name="close_drawer">Navigation drawer is close</string>
+
 </resources>
