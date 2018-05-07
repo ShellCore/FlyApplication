@@ -2,7 +2,6 @@ package com.example.shell.flyapplication.ui
 
 import android.os.Bundle
 import android.support.design.widget.NavigationView
-import android.support.design.widget.Snackbar
 import android.support.v4.app.Fragment
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
@@ -14,7 +13,7 @@ import com.example.shell.flyapplication.R
 import com.example.shell.flyapplication.ui.fragments.ArrivalsFragment
 import com.example.shell.flyapplication.ui.fragments.DeparturesFragment
 import com.example.shell.flyapplication.ui.fragments.HomeFragment
-import com.example.shell.flyapplication.ui.utils.showMessage
+import com.example.shell.flyapplication.utils.showMessage
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : ToolbarActivity(), NavigationView.OnNavigationItemSelectedListener {
